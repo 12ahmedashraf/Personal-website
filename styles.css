@@ -1,0 +1,276 @@
+:root {
+    --primary-cyan: #00A6D6;  
+    --dark-blue: #1a1635;     
+    --midnight-blue: #1B1440; 
+    --neon-blue: #0077FF;     
+    --soft-blue: #4A90E2;     
+    --white: #bcb5b5;         
+}
+
+.bg {
+   height: 300px;
+   position: relative;
+}
+.bg img{
+    width: 100%;
+            height: 100%;
+            object-fit: cover;
+}
+.pfp{
+    height: auto;
+    width: 400px;
+    position: absolute;
+    top: 15%;
+    left:39.7%;
+}
+.pfp img{
+    height: 300px;
+            width: 300px;
+            object-fit: cover;
+            border-radius: 50%;  
+            border: 5px solid var(--primary-cyan);
+
+}
+.profile{
+    margin-bottom: 120px;
+}
+.bio{
+    text-align: center;
+
+}
+.bio h1{
+    font-family: 'Fredoka', sans-serif;
+    font-size: 50px;
+    color: var(--midnight-blue);
+    margin-bottom: 0px;
+}
+.bio h2{
+  font-family: 'Quicksand', sans-serif;
+  font-size: 25px;
+  color: var(--midnight-blue);
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.bio h3{
+    font-family: 'Pacifico', cursive;
+    margin-top: 0px;
+    color: var(--neon-blue);
+    font-size: 25px;
+}
+.tabs {
+  border-bottom: 1px solid #ddd;
+  margin-left: 200px;
+  margin-bottom: 0px;
+}
+
+.tabs input[type="radio"] {
+  display: none;
+
+}
+.tab {
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 100px;
+  padding: 10px 0;
+  font-weight: normal;
+  transition: all 0.3s ease;
+  border-top: 3px solid transparent; 
+  font-family: "Quicksand",sans-serif;
+  
+}
+
+.tab:hover {
+  color: #0077FF;
+}
+#tab1:checked + label[for="tab1"],
+#tab2:checked + label[for="tab2"],
+#tab3:checked + label[for="tab3"],
+#tab4:checked + label[for="tab4"] {
+  font-weight: bold;
+  border-top: 3px solid #00A6D6; /* Customize your accent color */
+}
+.content-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: max-height 0.5s ease, 
+              opacity 0.5s ease, 
+              transform 0.5s ease;
+  background: #ffffff;
+  border-radius: 10px;
+  margin-top: 20px;
+  width: 90%;
+  padding-left: 0px;
+  margin-left: 0px;
+  margin-bottom: 10px;
+}
+.content-section p{
+  font-family: "Karla",sans-serif;
+  font-size: 30px;
+  line-height: 60px;
+  width: 80%;
+  padding-left: 80px;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+#tab1:checked ~ #about,
+#tab2:checked ~ #achievements,
+#tab3:checked ~ #projects,
+#tab4:checked ~ #randoms {
+  max-height: 500px; /* Adjust as needed for your content */
+  opacity: 1;
+  transform: translateY(0);
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.icons{
+  display: flex;
+  text-align: center;
+  padding-left: 690px;
+}
+.cficon{
+  height: 20px;
+  width: 20px;
+}
+.cficon svg {
+  width: 100%;
+  height: 100%;
+}
+#icon{
+  padding: 2px 0px;
+  height: 40px;
+  width: 40px;
+}
+.achievement-box {
+  position: relative;
+  width: 400px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  margin: 0px 20px;
+}
+
+.achievement-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+.achievement-box:hover img {
+  transform: scale(1.1); 
+}
+.achievement-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  color:var(--midnight-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 50px;
+  padding: 10px;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  font-family: 'Fredoka',sans-serif;
+}
+.achievement-box:hover .achievement-text {
+  opacity: 1;
+}
+@media screen and (min-width: 1024px) {
+  .pfp {
+      width: 400px;
+      left: 39.7%;
+  }
+  .bio h1 {
+      font-size: 50px;
+  }
+  .tabs {
+      margin-left: 200px;
+  }
+  .icons {
+      padding-left: 690px;
+  }
+  .achievement-box {
+      width: 400px;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .pfp {
+      width: 300px;
+      left: 35%;
+  }
+  .bio h1 {
+      font-size: 40px;
+  }
+  .tabs {
+      margin-left: 50px;
+  }
+  .icons {
+      padding-left: 300px;
+  }
+  .achievement-box {
+      width: 80%;
+  }
+}
+@media screen and (max-width: 767px) {
+  body {
+      text-align: center;
+  }
+  
+  .bg {
+      height: 200px;
+  }
+  
+  .pfp {
+      width: 200px;
+      position: static;
+      margin: 0 auto;
+  }
+
+  .bio h1 {
+      font-size: 30px;
+  }
+  .bio h2 {
+      font-size: 20px;
+  }
+  .bio h3 {
+      font-size: 18px;
+  }
+
+  .tabs {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 0;
+  }
+
+  .tab {
+      font-size: 16px;
+      margin: 5px 0;
+  }
+
+  .icons {
+      display: flex;
+      justify-content: center;
+      padding-left: 0;
+  }
+
+  .achievement-box {
+      width: 90%;
+      height: auto;
+  }
+
+  .achievement-text {
+      font-size: 24px;
+  }
+}
